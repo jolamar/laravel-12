@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EtaSpotController;
+use App\Http\Controllers\RideSystemsController;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
