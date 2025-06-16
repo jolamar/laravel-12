@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DegreesController;
 use App\Http\Controllers\EtaSpotController;
 use App\Http\Controllers\KnowledgeBaseController;
 use App\Http\Controllers\LiveWhaleController;
@@ -47,6 +48,12 @@ Route::group([
         Route::get('stops', [RideSystemsController::class, "getStops"]);
         Route::get('eta', [RideSystemsController::class, "getEtas"]);
     });
+});
+
+Route::group([
+    'prefix' => 'degrees',
+], function () {
+    Route::get('/', [DegreesController::class, "getDegrees"]);
 });
 
 Route::group([
