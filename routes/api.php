@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EtaSpotController;
+use App\Http\Controllers\LiveWhaleController;
 use App\Http\Controllers\RideSystemsController;
 use App\Http\Controllers\SportsController;
 use Illuminate\Support\Facades\Route;
@@ -45,4 +46,11 @@ Route::group([
         Route::get('stops', [RideSystemsController::class, "getStops"]);
         Route::get('eta', [RideSystemsController::class, "getEtas"]);
     });
+});
+
+
+Route::group([
+    'prefix' => 'news',
+], function () {
+    Route::get('/', [LiveWhaleController::class, "getNews"]);
 });
