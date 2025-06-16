@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EtaSpotController;
+use App\Http\Controllers\KnowledgeBaseController;
 use App\Http\Controllers\LiveWhaleController;
 use App\Http\Controllers\RideSystemsController;
 use App\Http\Controllers\SportsController;
@@ -48,6 +49,12 @@ Route::group([
     });
 });
 
+Route::group([
+    'prefix' => 'kb',
+], function () {
+    Route::get('/', [KnowledgeBaseController::class, 'search']);
+    Route::get('{id}', [KnowledgeBaseController::class, 'getArticle']);
+});
 
 Route::group([
     'prefix' => 'news',
